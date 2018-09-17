@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Modal = ({children, closeModal, title, modalState, successAction, successActionText, successActionDisabled}) => {
+const Modal = ({ children, closeModal, title, modalState, successAction, 
+  successActionText, successActionDisabled }) => {
 
   if (!modalState) {
     return null;
@@ -37,7 +38,11 @@ const Modal = ({children, closeModal, title, modalState, successAction, successA
 Modal.propTypes = {
   closeModal: PropTypes.func.isRequired,
   modalState: PropTypes.bool.isRequired,
-  title: PropTypes.string
+  title: PropTypes.string,
+  children: PropTypes.array,
+  successAction: PropTypes.func.isRequired,
+  successActionText: PropTypes.string.isRequired,
+  successActionDisabled: PropTypes.bool,
 };
 
 export default Modal;
